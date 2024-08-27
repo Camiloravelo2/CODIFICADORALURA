@@ -7,24 +7,24 @@
 </head>
 <body>
     <div class="Contenido">
-        <!-- Header con imagen pequeña en la parte superior izquierda -->
+     
         <header class="Cabeza">
             <img src="./assets/Alura.png" alt="Logo">
         </header>
 
-        <!-- Espacio en el centro para escribir texto -->
+      
         <div class="Contenido_1">
             <textarea id="Entrada_texto" rows="1" cols="48" placeholder="Ingrese el texto aqui"></textarea>
         </div>
 
-        <!-- Recuadro con imagen y texto -->
+      
         <div id="Contenido_2" class="Contenido_2">
             <img src="./assets/Muñeco.png" alt="Imagen contenido">
             <div class="Alerta">Ningún mensaje fue encontrado</div>
             <div class="Sugerencia">Ingresa el texto que desees encriptar o desencriptar.</div>
         </div>
 
-        <!-- Botones en columna -->
+        
         <div class="Botones">
             <button class="botonencriptar" onclick="encriptar()">Encriptar</button>
             <button class="botondesencriptar" onclick="desencriptar()">Desencriptar</button>
@@ -36,13 +36,10 @@
 
         function encriptar() {
             let inputText = document.getElementById("Entrada_texto").value;
-            originalText = inputText; // Guardar el texto original
+            originalText = inputText;
 
             if (inputText) {
-                // Reordenar las letras del texto
                 let shuffledText = inputText.split('').sort(() => Math.random() - 0.5).join('');
-
-                // Mostrar el texto encriptado en el cuadro de la derecha
                 document.getElementById("Contenido_2").innerHTML = `
                     <div class="Alerta">${shuffledText}</div>
                 `;
@@ -51,8 +48,7 @@
 
         function desencriptar() {
             if (originalText) {
-                // Mostrar el texto original en el cuadro de la derecha
-                document.getElementById("Contenido_2").innerHTML = `
+               document.getElementById("Contenido_2").innerHTML = `
                     <div class="Alerta">${originalText}</div>
                 `;
             }
